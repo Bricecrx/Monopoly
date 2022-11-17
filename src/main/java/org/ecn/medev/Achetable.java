@@ -1,8 +1,12 @@
 package org.ecn.medev;
 
-public class Achetable extends Case{
+/**
+ * Classe achetable
+ */
+public abstract class Achetable extends Case{
 
     public int prix;
+    public int loyer;
     public Joueur proprietaire;
 
     public Achetable() {
