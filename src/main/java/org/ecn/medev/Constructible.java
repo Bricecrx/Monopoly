@@ -29,6 +29,10 @@ public class Constructible extends Achetable {
     public Constructible(String nom){
         super(nom, -1);
     }
+
+    public Constructible(String nom, int prix){
+        super(nom,prix);
+    }
     
 
     public int getNbMaisons() {
