@@ -94,13 +94,12 @@ public class Plateau {
         for (int i = 0; i < NB_JOUEURS; i++) {
             // Deplacement.
             Joueur j = joueurs.get(i);
-            System.out.println("C'est le tour de " + j.getNom());
+            System.out.println("\n C'est le tour de " + j.getNom());
             int lance = j.lanceLeDe();
             System.out.println("Il avance de " + lance);
             j.avancer(lance);
             Case caseArrivee = cases.get(j.getPosition());
-            System.out.print("Et arrive en :");
-            caseArrivee.toString();
+            System.out.println("Et arrive en :" + caseArrivee +" ");
             if (caseArrivee instanceof Achetable) {
                 Achetable caseAchetable = (Achetable) caseArrivee;
                 // Achat d'une case.
