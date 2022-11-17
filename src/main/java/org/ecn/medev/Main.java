@@ -10,6 +10,7 @@ public class Main {
         int i=0;
         while(i<nombreDeTours){
             //gameBoard.tourDeJeu();
+            gameBoard.affiche();
         }
 
 
