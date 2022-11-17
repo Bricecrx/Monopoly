@@ -199,7 +199,7 @@ public class Plateau {
             System.out.println("---------------------------------");
             System.out.println("Liste des joueurs: ");
             for (Joueur j : joueurs) {
-                j.affiche();
+                System.out.println(j.toString());
             }
 
         }
