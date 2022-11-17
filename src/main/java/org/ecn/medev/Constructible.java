@@ -52,7 +52,7 @@ public class Constructible extends Achetable {
      * @param nbNouvellesMaisons le nombre de nouvelles maisons
      * @param nbNouveauxHotels le nombre de nouveaux hotels
      */
-    private void construire(int nbNouvellesMaisons, int nbNouveauxHotels) {
+    public void construire(int nbNouvellesMaisons, int nbNouveauxHotels) {
         this.nbMaisons += nbNouvellesMaisons;
         this.nbHotels += nbNouveauxHotels;
         this.calculLoyer();
