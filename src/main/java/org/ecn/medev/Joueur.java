@@ -121,7 +121,7 @@ public class Joueur {
         return "Joueur{" +
                 "nom='" + nom + '\'' +
                 " est en " + position +
-                '}';
+                '}' + " Il a les finances suivantes: " + fortune;
     }
 
     public void tourDeJeu(){
