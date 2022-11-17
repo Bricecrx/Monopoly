@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
- package org.ecn.medev;
+package org.ecn.medev;
 
 import java.util.LinkedList;
 import java.util.ArrayList;
@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * Le plateau de jeu.
  * @author eugene
  */
+
 public class Plateau {
     /** L'instance du plateau de jeu. */
     public static Plateau instance;
@@ -45,31 +46,52 @@ public class Plateau {
             numRue++;
             switch (i) {
                 case 0:
-                    cases.get(i) = new CaseSpeciale("Depart"); break;
+                    cases.set(i, new CaseSpeciale("Depart"));
+                    break;
                 case 10:
-                    cases.get(i) = new CaseSpeciale("Prison"); break;
+                    cases.set(i, new CaseSpeciale("Prison"));
+                    break;
                 case 20:
-                    cases.get(i) = new CaseSpeciale("Parc Gratuit"); break;
+                    cases.set(i, new CaseSpeciale("Parc Gratuit"));
+                    break;
                 case 30:
-                    cases.get(i) = new CaseSpeciale("Allez en Prison !"); break;
+                    cases.set(i, new CaseSpeciale("Allez en Prison !"));
+                    break;
                 case 1: case 3: case 6: case 8: case 9: case 11: case 13: case 14: case 16: case 18: case 19:
                 case 21: case 23: case 24: case 26: case 27: case 29: case 31: case 32: case 34: case 37: case 39:
-                    cases.get(i) = new Constructible("Rue n°" + numRue); break;
+                    cases.set(i, new Constructible("Rue n°" + numRue));
+                    break;
                 case 2: case 17: case 33:
-                    cases.get(i) = new CaseSpeciale("Caisse Communautaire"); break;
+                    cases.set(i, new CaseSpeciale("Caisse Communautaire"));
+                    break;
                 case 7: case 22: case 36:
-                    cases.get(i) = new CaseSpeciale("Chance"); break;
+                    cases.set(i, new CaseSpeciale("Chance"));
+                    break;
                 case 4: case 38:
-                    cases.get(i) = new CaseSpeciale("Taxes"); break;
+                    cases.set(i, new CaseSpeciale("Taxes"));
+                    break;
                 case 5: case 15: case 25: case 35:
-                    cases.get(i) = new Gare("Gare n°" + (i + 5)/10); break;
+                    cases.set(i, new Gare("Gare n°" + (i + 5)/10));
+                    break;
                 case 12: case 28:
-                    cases.get(i) = new CaseSpeciale("Companie"); break;
+                    cases.set(i, new CaseSpeciale("Companie"));
+                    break;
                 default:
-                    cases.get(i) = new CaseSpeciale("Oups"); break;
+                    cases.set(i, new CaseSpeciale("Oups"));
+                    break;
             }
         }
     }
+    
+    /** 
+     * Affichage des cases du plateau.
+     * @return Renvoie vrai si la partie est finie.
+    */
+    public boolean finDePartie() {
+        int nbJoueur = joueurs.size();
+        boolean partieFinie = nbJoueur <= 1;
+        return partieFinie;
+    }    
     
     /** Affichage des cases du plateau. */
     public void affiche() {
