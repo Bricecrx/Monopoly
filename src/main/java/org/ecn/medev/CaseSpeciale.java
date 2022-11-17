@@ -15,6 +15,10 @@ public class CaseSpeciale extends Case {
      public CaseSpeciale(){
         this.nom = "Depart";
     }
+   
+   public CaseSpeciale(String nom){
+      this.nom = nom;
+   }
     
     /**
      *
