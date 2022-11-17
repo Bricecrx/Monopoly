@@ -21,6 +21,6 @@ public class Gare extends Achetable {
 
     @Override
     public String toString() {
-        return "Gare de" + this.getNom() +" (coût :"+this.getPrix()+ ") - " + proprietaire.getNom();
+        return "Gare de" + this.getNom() +" (coût :"+this.getPrix()+ ") - " + this.getProprietaire();
     }
 }
