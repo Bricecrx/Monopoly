@@ -4,7 +4,7 @@ package org.ecn.medev;
 
 public class Gare extends Achetable {
 
-    public Gare(int nom, int prix,Joueur proprietaire) {
+    public Gare(String nom, int prix,Joueur proprietaire) {
         super(nom, prix, proprietaire);
     }
 
