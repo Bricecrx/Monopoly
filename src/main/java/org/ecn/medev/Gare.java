@@ -8,6 +8,7 @@ public class Gare extends Achetable {
         super(nom, prix, proprietaire);
     }
 
+    @Override
     public int calculLoyer(){
         return getPrix() ;
     }
