@@ -88,5 +88,16 @@ public class Joueur {
         this.position = position;
     }
     
-    
+    /**
+     * Le joueur avance d'un nb de cases
+     * @param nbCase
+     */
+    public void avancer(int nbCase){
+        for(int i=1; i<nbCase+1; i++){
+            this.position += nbCase;
+            if(this.position>39){
+                this.position -= 40;
+            }
+        }
+    }
 }

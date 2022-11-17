@@ -1,4 +1,4 @@
-package edu.ecn.medev;
+package org.ecn.medev;
 
 /**
  *
