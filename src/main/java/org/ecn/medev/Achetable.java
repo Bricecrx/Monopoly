@@ -21,7 +21,7 @@ public abstract class Achetable extends Case {
     protected Joueur proprietaire;
 
     /**
-     * Constructeur pour une case achetable
+     * Constructeur pour une case achetable avec propriétaire. Le loyer est mis à 0 par défaut.
      * @param nom nom de la case
      * @param prix le prix de la case
      * @param proprietaire le proprietaire de la case
@@ -33,7 +33,11 @@ public abstract class Achetable extends Case {
         this.proprietaire = proprietaire;
     }
 
-
+    /**
+     * Constructeur pour une case achetable sans propriétaire. Le loyer est mis à 0 par défaut.
+     * @param nom le nom de la case
+     * @param prix le prix de la case
+     */
     public Achetable(String nom, int prix) {
         super(nom);
         this.prix = prix;
@@ -41,33 +45,58 @@ public abstract class Achetable extends Case {
 
     }
 
+    /**
+     * Renvoie le prix d'achat de la case.
+     * @return le prix
+     */
     public int getPrix() {
         return prix;
     }
 
+    /**
+     * Renvoie le loyer sur la case.
+     * @return le loyer
+     */
     public int getLoyer() {
         return loyer;
     }
 
+    /**
+     * Renvoie le joueur propriétaire de la case.
+     * @return le joueur propriétaire
+     */
     public Joueur getProprietaire() {
         return proprietaire;
     }
 
+    /**
+     * Définit le prix de la case.
+     * @param prix le nouveau prix
+     */
     public void setPrix(int prix) {
         this.prix = prix;
     }
 
+    /**
+     * Définit le loyer sur la case.
+     * @param loyer le nouveau loyer
+     */
     public void setLoyer(int loyer) {
         this.loyer = loyer;
     }
 
+    /**
+     * Définit le propriétaire de la case.
+     * @param proprietaire le propriétaire de la case.
+     */
     public void setProprietaire(Joueur proprietaire) {
         this.proprietaire = proprietaire;
     }
 
     /**
-     *
-     * @param j
+     * Permet au joueur d'acheter la case.
+     * @param j le joueur acheteur
+     * @throws org.ecn.medev.NoMoreMoney
      */
     public void acheter(Joueur j) throws NoMoreMoney{
         this.setProprietaire(j);
@@ -78,16 +107,10 @@ public abstract class Achetable extends Case {
     }
 
     /**
-    * <h1>CalculLoyer</h1>
-    * La méthode MAJ le prix du loyer lors de l'achat ou de la construction
-    * <p>
-    *
+    * Calcule le loyer sur la case. Le calcul est fait en fonction du type de case et du nombres de maisons et d'hotels.
     * @author  Thomas Canal
-    * @version 1.0
-    * @since   2022-11-17
     */
-    public void calculLoyer()
-    {
+    public void calculLoyer() {
         int loyer = 0;
         int a,b;
         
@@ -95,13 +118,11 @@ public abstract class Achetable extends Case {
         b = 100;
        
         //  est-ce une gare ?
-        if(this instanceof Constructible)
-        {
+        if(this instanceof Constructible) {
             loyer = a * this.prix *  ((Constructible)this).getNbHotels() + b * this.prix * ((Constructible)this).getNbMaisons();
         }
         // ou un constructible ?
-        else if(this instanceof Gare)
-        {
+        else if(this instanceof Gare) {
             loyer = 2500 * Plateau.instance.nbGares(this.getProprietaire());
         }
         
@@ -110,6 +131,10 @@ public abstract class Achetable extends Case {
     
     
 
+    /**
+     * Renvoie une chaine de caractères représentant la case.
+     * @return une chaine de caractères représentant la case.
+     */
     @Override
     public String toString() {
         String achetableString = getNom() + "(cout : " + getPrix() + " )";
