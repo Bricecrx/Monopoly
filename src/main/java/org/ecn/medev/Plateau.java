@@ -30,55 +30,58 @@ public class Plateau {
     /** Constructeur du plateau. */
     Plateau() {
         instance = this;
+        this.joueurs=new LinkedList<>();
+        //this.cases=new ArrayList<>();
     }
     
     /** Initialisation des joueurs et des cases du plateau. */
     public void init() {
         // Initialisation des joueurs
+        //this.joueurs=new LinkedList<>();
         for (int i = 0; i < NB_JOUEURS; i++) {
             Joueur j = new Joueur("Joueur " + i, 100000, 0);
             joueurs.add(j);
         }
         
         // Initialisation des cases
-        cases = new ArrayList(NB_CASES);
+        cases = new ArrayList<>(NB_CASES);
         int numRue = 0;
         for (int i = 0; i < NB_CASES; i++) {
             numRue++;
             switch (i) {
                 case 0:
-                    cases.set(i, new CaseSpeciale("Depart"));
+                    cases.add( new CaseSpeciale("Depart"));
                     break;
                 case 10:
-                    cases.set(i, new CaseSpeciale("Prison"));
+                    cases.add( new CaseSpeciale("Prison"));
                     break;
                 case 20:
-                    cases.set(i, new CaseSpeciale("Parc Gratuit"));
+                    cases.add(new CaseSpeciale("Parc Gratuit"));
                     break;
                 case 30:
-                    cases.set(i, new CaseSpeciale("Allez en Prison !"));
+                    cases.add( new CaseSpeciale("Allez en Prison !"));
                     break;
                 case 1: case 3: case 6: case 8: case 9: case 11: case 13: case 14: case 16: case 18: case 19:
                 case 21: case 23: case 24: case 26: case 27: case 29: case 31: case 32: case 34: case 37: case 39:
-                    cases.set(i, new Constructible("Rue n°" + numRue));
+                    cases.add( new Constructible("Rue n°" + numRue));
                     break;
                 case 2: case 17: case 33:
-                    cases.set(i, new CaseSpeciale("Caisse Communautaire"));
+                    cases.add( new CaseSpeciale("Caisse Communautaire"));
                     break;
                 case 7: case 22: case 36:
-                    cases.set(i, new CaseSpeciale("Chance"));
+                    cases.add( new CaseSpeciale("Chance"));
                     break;
                 case 4: case 38:
-                    cases.set(i, new CaseSpeciale("Taxes"));
+                    cases.add( new CaseSpeciale("Taxes"));
                     break;
                 case 5: case 15: case 25: case 35:
-                    cases.set(i, new Gare("Gare n°" + (i + 5)/10));
+                    cases.add( new Gare("Gare n°" + (i + 5)/10));
                     break;
                 case 12: case 28:
-                    cases.set(i, new CaseSpeciale("Companie"));
+                    cases.add( new CaseSpeciale("Companie"));
                     break;
                 default:
-                    cases.set(i, new CaseSpeciale("Oups"));
+                    cases.add( new CaseSpeciale("Oups"));
                     break;
             }
         }
@@ -190,7 +193,7 @@ public class Plateau {
     /** Affichage des cases du plateau. */
     public void affiche() {
         for (Case c : cases) {
-            c.toString();
+            System.out.println(c.toString());
 
             System.out.println("");
             System.out.println("---------------------------------");
@@ -198,6 +201,7 @@ public class Plateau {
             for (Joueur j : joueurs) {
                 j.affiche();
             }
+
         }
     }
     
