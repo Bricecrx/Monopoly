@@ -1,24 +1,68 @@
-package org.ecn.medev;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package org.centrale.projet.objet.medevtp1;
 
-public abstract class Case {
-    String nom;
+/**
+ *
+ * @author Meryam
+ */
+public class Case {
     
-    public Case(String nom) {
-        this.nom = nom;
+    @override
+    public String toString(){
+        
+        if (this instanceof ParcGratuit){
+            String s = "Parc Gratuit : " + this.nom;
+            return s
+        }
+        if (this instanceof Prison){
+            String s = "Prison : " + this.nom;
+            return s
+        }
+        if (this instanceof Police){
+            String s = "Police : " + this.nom;
+            return s
+        }
+        if (this instanceof Chance){
+            String s = "C'est une case de chance : " + this.nom;
+            return s
+        }
+        if (this instanceof Gare){
+            String s = "Gare : " + this.nom;
+            Gare g = (Gare)this;
+            s = s + ", coût : " + g.prix;
+            if (g.proprietaire.equals(null)){
+                s = s + " , sans propiétaire ";
+            }
+            else{
+                s = s + " , propriétaire : " + g.proprietaire.nom
+            }
+            
+            s = s + " , loyer = " + g.loyer " €";
+            
+            return s
+        }
+        if (this instanceof Constructible){
+                
+            String s = this.nom;
+            Constructible c = (Constructible)this;
+            s = s + ", coût : " + c.prix;
+            if (g.proprietaire.equals(null)){
+                s = s + " , sans propiétaire ";
+            }
+            else{
+                s = s + " , propriétaire : " + c.proprietaire.nom;
+            }
+            if (c.nbMaison !=null){
+                s = s + " , " + c.nbMaison + " maison ";
+            }
+            
+            s = s + " , loyer = " + c.loyer " €";
+            
     }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    @Override
-    public String toString() {
-        return "Case{" +
-                "nom='" + nom + '\'' +
-                '}';
+        
+        
     }
 }
