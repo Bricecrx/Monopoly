@@ -19,9 +19,13 @@ public class Constructible extends Achetable {
      * Nombre d'hotels construits sur la case.
      */
     private int nbHotels;
+    
+    public Constructible() {
+        this.nbMaisons = 0;
+        this.nbHotels = 0;
+    }
 
-    public Constructible(String nom, int prix, int loyer, Joueur proprietaire, int nbMaisons, int nbHotels) {
-        super(nom, prix, loyer, proprietaire);
+    public Constructible(int nbMaisons, int nbHotels) {
         this.nbMaisons = nbMaisons;
         this.nbHotels = nbHotels;
     }
@@ -43,11 +47,11 @@ public class Constructible extends Achetable {
     }
     
     /**
-     * Construit des nouvelles maisons et de nouveaux hotels
+     * Construit de nouvelles maisons et de nouveaux hotels
      * @param nbNouvellesMaisons le nombre de nouvelles maisons
      * @param nbNouveauxHotels le nombre de nouveaux hotels
      */
-    private void construire(int nbNouvellesMaisons, int nbNouveauxHotels) {
+    private void contruire(int nbNouvellesMaisons, int nbNouveauxHotels) {
         this.nbMaisons += nbNouvellesMaisons;
         this.nbHotels += nbNouveauxHotels;
     }

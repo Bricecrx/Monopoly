@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package org.ecn.medev;
-
+import java.util.Random;
 /**
  * Classe Joueur
  * @author erwan
@@ -87,7 +87,15 @@ public class Joueur {
     public void setPosition(int position) {
         this.position = position;
     }
-    
+
+    /**
+     * méthode qui retourne une valeur aléatoire représentant la valeur d'un dé lancé
+     * @return deval un entier qui represente la valeur du dé lancé
+     */
+    public static int lanceLeDe() {
+        int deval = (int) Math.floor(Math.random()*6+1);
+        return deval;
+    }
     /**
      * Le joueur avance d'un nb de cases
      * @param nbCase
