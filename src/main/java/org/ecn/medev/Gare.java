@@ -1,20 +1,36 @@
 package org.ecn.medev;
 
-// As comments the parts of code that still need to be added once the other classes are created
+/**
+ * Classe Gare extension de Achetable
+ */
 
 public class Gare extends Achetable {
+     /**
+     * Constructeur de la classe Gare que reçoit Nom, Prix et un Jouer
+     * @param nom
+     * @param prix
+     * @param proprietaire
+     */
 
     public Gare(String nom, int prix,Joueur proprietaire) {
         super(nom, prix, proprietaire);
     }
 
-
+    /**
+     * Constructeur simple de la classe Gare que reçoit Nom
+     * @param name
+     */
     public Gare(String name){
         super(name,500);
 
     }
 
 
+    /**
+     * Renvoie une chaine de caractères représentant la case Gare.
+     * @return une chaine de caractères représentant la case Gare.
+     */
+    
     @Override
     public String toString() {
 
