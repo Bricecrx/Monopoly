@@ -72,6 +72,9 @@ public abstract class Achetable extends Case {
     public void acheter(Joueur j) {
         this.proprietaire = new Joueur(j);
         j.setFortune(j.getFortune - this.prix);
+        
+        // On maj le loyer 
+        this.calculLoyer();
     }
 
     /**
