@@ -152,7 +152,7 @@ public class Joueur {
      */
     public void avancer(int nbCase){
         for(int i=1; i<nbCase+1; i++){
-            this.position += nbCase;
+            this.position += 1;
             if(this.position>39){
                 this.position -= 40;
             }
