@@ -5,8 +5,12 @@
 
 package org.ecn.medev;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.LinkedList;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -26,6 +30,9 @@ public class Plateau {
     private ArrayList<Case> cases;
     /** Les joueurs. */
     private LinkedList<Joueur> joueurs;
+
+    //Indique si la partie est en cours
+    public boolean partieEnCours = true;
     
     /** Constructeur du plateau. */
     public Plateau() {
@@ -53,13 +60,13 @@ public class Plateau {
                     cases.add( new CaseSpeciale("Depart"));
                     break;
                 case 10:
-                    cases.add( new CaseSpeciale("Prison"));
+                    cases.add( new Prison());
                     break;
                 case 20:
                     cases.add(new CaseSpeciale("Parc Gratuit"));
                     break;
                 case 30:
-                    cases.add( new GoToPrison());
+                    cases.add( new Police());
                     break;
                 case 1: case 3: case 6: case 8: case 9: case 11: case 13: case 14: case 16: case 18: case 19:
                 case 21: case 23: case 24: case 26: case 27: case 29: case 31: case 32: case 34: case 37: case 39:
@@ -177,16 +184,17 @@ public class Plateau {
                 }
             }
         }
+
+        finDePartie();
     }
     
     /** 
      * Indicateur de fin de partie.
-     * @return Renvoie vrai si la partie est finie.
+     * Set la variable partieEnCours sur False si la partie est terminée
     */
-    public boolean finDePartie() {
+    public void finDePartie() {
         int nbJoueur = joueurs.size();
-        boolean partieFinie = nbJoueur <= 1;
-        return partieFinie;
+        partieEnCours = !(nbJoueur <= 1);
     }    
     
     /** Affichage des cases du plateau. */
@@ -228,5 +236,13 @@ public class Plateau {
         }
         
         return n;
+    }
+
+    public LinkedList<Joueur> getJoueurs() {
+        return joueurs;
+    }
+
+    public void setJoueurs(LinkedList<Joueur> joueurs) {
+        this.joueurs = joueurs;
     }
 }

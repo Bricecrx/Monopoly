@@ -20,33 +20,65 @@ public class Constructible extends Achetable {
      */
     protected int nbHotels;
 
+    /**
+     * Constructeur pour une case constructible.
+     * @param nom le nom de la case
+     * @param prix le prix d'achat de la case
+     * @param proprietaire le propriétaire de la case
+     * @param nbMaisons le nombre de maisons sur la case
+     * @param nbHotels le nombre d'hotels sur la case
+     */
     public Constructible(String nom, int prix, Joueur proprietaire, int nbMaisons, int nbHotels) {
         super(nom, prix, proprietaire);
         this.nbMaisons = nbMaisons;
         this.nbHotels = nbHotels;
     }
     
+     /**
+     * Constructeur pour une case constructible.
+     * @param nom le nom de la case
+     */
     public Constructible(String nom){
-        super(nom, -1);
+        super(nom, 10000);
     }
 
+     /**
+     * Constructeur pour une case constructible.
+     * @param nom le nom de la case
+     * @param prix le prix de la case
+     */
     public Constructible(String nom, int prix){
-        super(nom,prix);
+        super(nom, prix);
     }
     
-
+     /**
+     * Renvoie le nombre de maisons sur la case.
+     * @return le nombre de maisons
+     */
     public int getNbMaisons() {
         return nbMaisons;
     }
 
+     /**
+     * Renvoie le nombre d'hotels sur la case.
+     * @return le nombre de cases
+     */
     public int getNbHotels() {
         return nbHotels;
     }
 
+     /**
+     * Définit le nombre de maisons sur la case.
+     * @param nbMaisons le nouveau nombre de maison
+     */
     public void setNbMaisons(int nbMaisons) {
         this.nbMaisons = nbMaisons;
     }
 
+     /**
+     * Définit le nombre d'hotels sur la case.
+     * @param nbHotels le nouveau nombre d'hotels
+     */
     public void setNbHotels(int nbHotels) {
         this.nbHotels = nbHotels;
     }
