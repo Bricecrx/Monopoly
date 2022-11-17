@@ -194,14 +194,16 @@ public class Plateau {
         for (Case c : cases) {
             System.out.println(c.toString());
 
-            System.out.println("");
+            
+
+        }
+
+        System.out.println("");
             System.out.println("---------------------------------");
             System.out.println("Liste des joueurs: ");
             for (Joueur j : joueurs) {
                 System.out.println(j.toString());
             }
-
-        }
     }
     
     /**
