@@ -7,6 +7,8 @@ public abstract class Case {
         this.nom = nom;
     }
 
+
+
     public String getNom() {
         return nom;
     }
