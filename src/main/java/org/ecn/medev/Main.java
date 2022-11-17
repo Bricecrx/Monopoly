@@ -5,7 +5,6 @@ public class Main {
         System.out.println("Lancement du Jeu ");
         Plateau gameBoard=new Plateau();
         gameBoard.init();
-        Joueur playerOne= new Joueur("Player1",1000,0);
 
         int nombreDeTours=5;
         int i=0;
