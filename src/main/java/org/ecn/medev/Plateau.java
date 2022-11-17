@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * Le plateau de jeu.
  * @author eugene
  */
+ 
 public class Plateau {
     /** L'instance du plateau de jeu. */
     public static Plateau instance;
@@ -69,6 +70,16 @@ public class Plateau {
                     cases.get(i) = new CaseSpeciale("Oups"); break;
             }
         }
+    }
+    
+    /** 
+     * Affichage des cases du plateau.
+     * @return Renvoie vrai si la partie est finie.
+    */
+    public boolean finDePartie() {
+        int nbJoueur = joueurs.size();
+        boolean partieFinie = nbJoueur <= 1;
+        return partieFinie;
     }
     
     /** Affichage des cases du plateau. */
