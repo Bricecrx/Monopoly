@@ -1,11 +1,11 @@
 package org.ecn.medev;
 
-public class Prison extends CaseSpeciale{
+public class GoToPrison extends CaseSpeciale{
 
     /**
      * Constructeur par defaut
      */
-    public Prison() {
+    public GoToPrison() {
         super("Prison");
     }
 
