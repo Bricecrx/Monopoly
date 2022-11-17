@@ -28,20 +28,20 @@ public class Joueur {
         this.position = position;
     }
     
+    /** Constructeur par defaut de Joueur avec nom. */
+    public Joueur(String nom) {
+        this.nom = nom;
+        this.fortune = 100000;
+        this.position = 0;       
+    }
+    
     /** Constructeur par defaut de Joueur. */
     public Joueur() {
         this.nom = "Jacques";
         this.fortune = 100000;
         this.position = 0;       
     }
-    /**
-     * Constructeur par copie
-     */
-    Joueur(Joueur j ) {
-        this.nom = j.nom;
-        this.fortune = j.fortune;
-        this.position = j.position;
-    }
+    
     /** Paiement d'un autre joueur.
      * @param cout cout du paiement.
      * @param j Joueur a payer.
