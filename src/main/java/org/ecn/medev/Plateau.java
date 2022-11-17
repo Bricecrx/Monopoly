@@ -28,7 +28,7 @@ public class Plateau {
     /** Les joueurs. */
     private LinkedList<Joueur> joueurs;
 
-    //Indique si la partie est en cours
+    /** Booléen indiquant si la partie est en cours. */
     public boolean partieEnCours = true;
     
     /** Constructeur du plateau. */
@@ -214,6 +214,7 @@ public class Plateau {
     /**
      * @author Meryam
      * Renvoie le nombre de gares.
+     * @param j le joueur
      * @return Le nombre de gares.
      */
     public int nbGares(Joueur j){
@@ -235,10 +236,18 @@ public class Plateau {
         return n;
     }
 
+    /**
+     * Renvoie la liste des joueurs sur le plateau.
+     * @return la liste des joueurs.
+     */
     public LinkedList<Joueur> getJoueurs() {
         return joueurs;
     }
 
+    /**
+     * Définit la liste des joueurs.
+     * @param joueurs la nouvelle liste de joueurs.
+     */
     public void setJoueurs(LinkedList<Joueur> joueurs) {
         this.joueurs = joueurs;
     }
