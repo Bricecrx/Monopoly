@@ -9,7 +9,7 @@ public class Gare extends Achetable {
     }
 
     @Override
-    public int calculLoyer(){
+    public void calculLoyer(){
         return getPrix() ;
     }
 
