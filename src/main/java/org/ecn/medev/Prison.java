@@ -1,5 +1,8 @@
 package org.ecn.medev;
 
+/**
+ * Classe Prison.
+ */
 public class Prison extends CaseSpeciale{
 
     /**
