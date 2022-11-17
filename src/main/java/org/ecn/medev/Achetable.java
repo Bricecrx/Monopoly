@@ -78,7 +78,7 @@ public abstract class Achetable extends Case {
     * @version 1.0
     * @since   2022-11-17
     */
-    public void CalculLoyer()
+    public void calculLoyer()
     {
         int loyer = 0;
         int a,b;
