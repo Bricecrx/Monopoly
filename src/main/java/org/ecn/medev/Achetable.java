@@ -65,4 +65,15 @@ public abstract class Achetable extends Case {
     public int calculLoyer(Joueur j) {
         return 0;
     }
+
+    @Override
+    public String toString() {
+        String achetableString = getNom() + "(cout : " + getPrix() + " )";
+        if (getProprietaire() == null) {
+            return achetableString + " - Sans proprietaire";
+        } else {
+            return achetableString + " - Proprietaire : " + getProprietaire() + ", loyer: " + getLoyer();
+        }
+    }
+
 }
