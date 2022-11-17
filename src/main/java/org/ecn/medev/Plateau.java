@@ -96,7 +96,7 @@ public class Plateau {
     /** Affichage des cases du plateau. */
     public void affiche() {
         for (Case c : cases) {
-            c.affiche();
+            c.toString();
         }
     }
 }
