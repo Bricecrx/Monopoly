@@ -22,14 +22,14 @@ public class Joueur {
      * @param fortune Fortune du Joueur.
      * @param position Position du Joueur.
     */
-    Joueur(String nom, int fortune, int position) {
+    public Joueur(String nom, int fortune, int position) {
         this.nom = nom;
         this.fortune = fortune;
         this.position = position;
     }
     
     /** Constructeur par defaut de Joueur. */
-    Joueur() {
+    public Joueur() {
         this.nom = "Jacques";
         this.fortune = 100000;
         this.position = 0;       
