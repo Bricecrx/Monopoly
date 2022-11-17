@@ -137,11 +137,11 @@ public abstract class Achetable extends Case {
      */
     @Override
     public String toString() {
-        String achetableString = getNom() + "(cout : " + getPrix() + " )";
-        if (getProprietaire() == null) {
+        String achetableString = this.getNom() + "(cout : " + this.getPrix() + " )";
+        if (this.getProprietaire() == null) {
             return achetableString + " - Sans proprietaire";
         } else {
-            return achetableString + " - Proprietaire : " + getProprietaire() + ", loyer: " + getLoyer();
+            return achetableString + " - Proprietaire : " + this.getProprietaire() + ", loyer: " + this.getLoyer();
         }
     }
 
