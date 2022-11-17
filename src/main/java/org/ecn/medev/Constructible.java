@@ -9,16 +9,17 @@ package org.ecn.medev;
  * @author Pierre Baudet
  */
 public class Constructible extends Achetable {
-
+    
     /**
      * Nombre de maisons construites sur la case.
      */
     private int nbMaisons;
-
+    
     /**
      * Nombre d'hotels construits sur la case.
      */
     private int nbHotels;
+    
     public Constructible() {
         this.nbMaisons = 0;
         this.nbHotels = 0;
@@ -44,6 +45,7 @@ public class Constructible extends Achetable {
     public void setNbHotels(int nbHotels) {
         this.nbHotels = nbHotels;
     }
+    
     /**
      * Construit des nouvelles maisons et de nouveaux hotels
      * @param nbNouvellesMaisons le nombre de nouvelles maisons
