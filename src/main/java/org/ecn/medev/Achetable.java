@@ -33,6 +33,14 @@ public abstract class Achetable extends Case {
         this.proprietaire = proprietaire;
     }
 
+
+    public Achetable(String nom, int prix) {
+        super(nom);
+        this.prix = prix;
+        this.loyer = 0;
+
+    }
+
     public int getPrix() {
         return prix;
     }
