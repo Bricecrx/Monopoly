@@ -102,7 +102,7 @@ public abstract class Achetable extends Case {
         // ou un constructible ?
         else if(this instanceof Gare)
         {
-            loyer = 2500 * this.getProprietaire().nbGare();
+            loyer = 2500 * Plateau.instance.nbGares(this.getProprietaire());
         }
         
         this.setLoyer(loyer);
