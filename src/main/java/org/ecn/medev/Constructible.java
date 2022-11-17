@@ -21,7 +21,7 @@ public class Constructible extends Achetable {
     protected int nbHotels;
 
     public Constructible(String nom, int prix, int loyer, Joueur proprietaire, int nbMaisons, int nbHotels) {
-        super(nom, prix, loyer, proprietaire);
+        super(nom, prix, proprietaire);
         this.nbMaisons = nbMaisons;
         this.nbHotels = nbHotels;
     }
@@ -51,6 +51,6 @@ public class Constructible extends Achetable {
     private void construire(int nbNouvellesMaisons, int nbNouveauxHotels) {
         this.nbMaisons += nbNouvellesMaisons;
         this.nbHotels += nbNouveauxHotels;
-        this.CalculLoyer();
+        this.calculLoyer();
     }
 }
