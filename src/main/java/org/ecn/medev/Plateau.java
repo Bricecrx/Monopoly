@@ -30,14 +30,14 @@ public class Plateau {
     /** Constructeur du plateau. */
     public Plateau() {
         instance = this;
-        this.joueurs=new LinkedList<>();
+        init();
         //this.cases=new ArrayList<>();
     }
     
     /** Initialisation des joueurs et des cases du plateau. */
     public void init() {
         // Initialisation des joueurs
-        //this.joueurs=new LinkedList<>();
+        this.joueurs = new LinkedList<>();
         for (int i = 0; i < NB_JOUEURS; i++) {
             Joueur j = new Joueur("Joueur " + i, 100000, 0);
             joueurs.add(j);
@@ -59,7 +59,7 @@ public class Plateau {
                     cases.add(new CaseSpeciale("Parc Gratuit"));
                     break;
                 case 30:
-                    cases.add( new CaseSpeciale("Allez en Prison !"));
+                    cases.add( new GoToPrison());
                     break;
                 case 1: case 3: case 6: case 8: case 9: case 11: case 13: case 14: case 16: case 18: case 19:
                 case 21: case 23: case 24: case 26: case 27: case 29: case 31: case 32: case 34: case 37: case 39:
