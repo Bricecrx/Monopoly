@@ -1,4 +1,4 @@
-package org.ecn;
+package org.ecn.medev;
 
 public class Main {
     public static void main(String[] args) {
