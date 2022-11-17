@@ -22,6 +22,7 @@ public abstract class Achetable extends Case {
 
     /**
      * Constructeur pour une case achetable
+     * @param nom nom de la case
      * @param prix le prix de la case
      * @param loyer le loyer sur la case
      * @param proprietaire le proprietaire de la case
