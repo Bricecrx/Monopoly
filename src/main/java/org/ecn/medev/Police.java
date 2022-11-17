@@ -1,9 +1,17 @@
 package org.ecn.medev;
 
-public class Police extends CaseSpeciale{
+public class Police extends CaseSpeciale {
 
-}
 
-public Police() {
+    /**
+     * Constructeur par defaut
+     */
+    public Police() {
+        super("Police");
+    }
 
+    @Override
+    public void effet(Joueur joueur) {
+
+    }
 }

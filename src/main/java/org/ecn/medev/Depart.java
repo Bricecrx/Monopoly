@@ -1,16 +1,17 @@
 package org.ecn.medev;
 
-public class Prison extends CaseSpeciale{
+public class Depart extends CaseSpeciale {
+
 
     /**
      * Constructeur par defaut
      */
-    public Prison() {
-        super("Prison");
+    public Depart() {
+        super("Depart");
     }
 
     @Override
     public void effet(Joueur joueur) {
-
+        
     }
 }

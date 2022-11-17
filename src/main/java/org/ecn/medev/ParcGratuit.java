@@ -13,5 +13,12 @@ public class ParcGratuit extends CaseSpeciale {
     /**
      * Constructeurs de parc gratuit.
      */
-    public ParcGratuit() {}
+    public ParcGratuit() {
+        super("Parc gratuit");
+    }
+
+    @Override
+    public void effet(Joueur joueur) {
+
+    }
 }

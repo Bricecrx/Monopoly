@@ -1,45 +1,27 @@
-package edu.ecn.medev;
+package org.ecn.medev;
 
 /**
  *
  * @author aulou
  */
-public class CaseSpeciale extends Case {
-    // Nom de la case
-    private String nom;
-    
-    
+public abstract class CaseSpeciale extends Case {
+
     /**
      *
      * @param nomCase
      */
     public CaseSpeciale(String nomCase){
-        nom = nomCase;
+        setNom(nomCase);
     }
-    
-    // Constructeur par défaut : case départ
+
+
+    public abstract void effet(Joueur joueur);
 
     /**
-     *
-     */
-     public CaseSpeciale(){
-        this.nom = "Depart";
-    }
-    
-    /**
-     *
      * @return
      */
     @Override
-    public String GetNom(){
-        return(nom);
-    }
-
-    /**
-     *
-     */
-    @Override
-    public void toString(){
-        System.out.println(nom);
+    public String toString(){
+        return getNom();
     }
 }
