@@ -7,6 +7,7 @@ package org.ecn.medev;
 
 import java.util.LinkedList;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Le plateau de jeu.
@@ -27,7 +28,7 @@ public class Plateau {
     private LinkedList<Joueur> joueurs;
     
     /** Constructeur du plateau. */
-    public Plateau() {
+    Plateau() {
         instance = this;
     }
     
@@ -35,7 +36,7 @@ public class Plateau {
     public void init() {
         // Initialisation des joueurs
         for (int i = 0; i < NB_JOUEURS; i++) {
-            Joueur j = new Joueur("Joueur " + i,100000, 0);
+            Joueur j = new Joueur("Joueur " + i, 100000, 0);
             joueurs.add(j);
         }
         
@@ -83,8 +84,101 @@ public class Plateau {
         }
     }
     
+        /** Fait un tour de jeu pour chaque joueur. */
+    public void tourDeJeu() {
+        Scanner scan = new Scanner(System.in);
+        
+        for (int i = 0; i < NB_JOUEURS; i++) {
+            // Deplacement.
+            Joueur j = joueurs.get(i);
+            System.out.println("C'est le tour de " + j.getNom());
+            int lance = j.lanceLeDe();
+            System.out.println("Il avance de " + lance);
+            j.avancer(lance);
+            Case caseArrivee = cases.get(j.getPosition());
+            System.out.print("Et arrive en :");
+            caseArrivee.toString();
+            if (caseArrivee instanceof Achetable) {
+                Achetable caseAchetable = (Achetable) caseArrivee;
+                // Achat d'une case.
+                if (caseAchetable.getProprietaire() == null) {
+                    System.out.println(j.getNom() + ", voulez-vous acheter la case " + j.getPosition() + " ? (O/N)");
+                    if (scan.next().equals("O")) {
+                        try {
+                            j.payer(caseAchetable.getPrix());
+                            caseAchetable.acheter(j);
+                        } catch (NoMoreMoney nmm) {
+                            System.out.println(j.getNom() + " n'a plus un sou ! Il est elimine ...");
+                            joueurs.remove(i);
+                        }
+                    }
+                }
+                // Paiement du loyer.
+                else {
+                    Joueur proprio = caseAchetable.getProprietaire();
+                    if (joueurs.contains(proprio) && !proprio.getNom().equals(j.getNom())) {
+                        try {
+                            j.payer(caseAchetable.getLoyer(), proprio);
+                        } catch (NoMoreMoney nmm) {
+                            System.out.println(j.getNom() + " n'a plus un sou ! Il est elimine ...");
+                            joueurs.remove(i);
+                        }
+                    }
+                }
+            }
+            else {
+                // Traitement du cas des cases speciales.
+            }
+            // On verifie que le joueur n'a pas fait faillite.
+            if (joueurs.contains(j)) {
+                // Construction de maisons et d'hotels.
+                System.out.println(j.getNom() + ", voulez-vous construire sur une de vos proprietes ? (O/N)");
+                if (scan.next().equals("O")) {
+                    LinkedList<Constructible> proprietes = new LinkedList();
+                    for (Case c : cases) {
+                        if (c instanceof Constructible) {
+                            Constructible constr = (Constructible) c;
+                            if (constr.getProprietaire() == j) {
+                                proprietes.add(constr);
+                            }
+                        } 
+                    }
+                    if (proprietes.isEmpty()) {
+                        System.out.println("Vous n'avez pas de proprietes ...");
+                    }
+                    else {
+                        System.out.println("Choisissez le lieu de la construction (numero) parmi :");
+                        for (int l = 0; l < proprietes.size(); l++) {
+                            System.out.println((l + 1) + ": " + proprietes.get(l).getNom());
+                        }
+                        int choix = Integer.parseInt(scan.next()) - 1;
+                        if (choix < proprietes.size()) {
+                            Constructible prop = proprietes.get(choix);
+                            System.out.println("Combien de maisons voulez-vous construire ?");
+                            int nbMaisons = Integer.parseInt(scan.next());
+                            System.out.println("Combien d'hotels voulez-vous construire ?");
+                            int nbHotels = Integer.parseInt(scan.next());
+                            if (nbMaisons < 0 || nbHotels < 0) {
+                                System.out.println("Nombre incorrect !");
+                            }
+                            else if (nbMaisons != 0 || nbHotels != 0) {
+                                try {
+                                    prop.construire(nbMaisons, nbHotels);
+                                    j.payer(1000 * nbMaisons + 4000 * nbHotels);
+                                } catch (NoMoreMoney nmm) {
+                                    System.out.println(j.getNom() + " n'a plus un sou ! Il est elimine ...");
+                                    joueurs.remove(i);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     /** 
-     * Affichage des cases du plateau.
+     * Indicateur de fin de partie.
      * @return Renvoie vrai si la partie est finie.
     */
     public boolean finDePartie() {
