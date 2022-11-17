@@ -28,7 +28,7 @@ public class Plateau {
     private LinkedList<Joueur> joueurs;
     
     /** Constructeur du plateau. */
-    Plateau() {
+    public Plateau() {
         instance = this;
         this.joueurs=new LinkedList<>();
         //this.cases=new ArrayList<>();
