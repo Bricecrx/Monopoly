@@ -10,15 +10,18 @@ package org.ecn.medev;
  */
 public class Constructible extends Achetable {
     
+    /**
+     * Nombre de maisons construites sur la case.
+     */
     private int nbMaisons;
-    private int nbHotels;
     
-    public Constructible() {
-        this.nbMaisons = 0;
-        this.nbHotels = 0;
-    }
+    /**
+     * Nombre d'hotels construits sur la case.
+     */
+    private int nbHotels;
 
-    public Constructible(int nbMaisons, int nbHotels) {
+    public Constructible(String nom, int prix, int loyer, Joueur proprietaire, int nbMaisons, int nbHotels) {
+        super(nom, prix, loyer, proprietaire);
         this.nbMaisons = nbMaisons;
         this.nbHotels = nbHotels;
     }
@@ -39,7 +42,12 @@ public class Constructible extends Achetable {
         this.nbHotels = nbHotels;
     }
     
-    private void contruire(int nbNouvellesMaisons, int nbNouveauxHotels) {
+    /**
+     * Construit des nouvelles maisons et de nouveaux hotels
+     * @param nbNouvellesMaisons le nombre de nouvelles maisons
+     * @param nbNouveauxHotels le nombre de nouveaux hotels
+     */
+    private void construire(int nbNouvellesMaisons, int nbNouveauxHotels) {
         this.nbMaisons += nbNouvellesMaisons;
         this.nbHotels += nbNouveauxHotels;
     }
