@@ -171,10 +171,5 @@ public class Joueur {
                 '}' + " Il a les finances suivantes: " + fortune;
     }
 
-    /**
-     * Gère le tour de jeu.
-     */
-    public void tourDeJeu(){
-        int de = lanceLeDe();
-    }
+
 }

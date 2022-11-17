@@ -12,6 +12,10 @@ public class Prison extends CaseSpeciale{
         super("Prison");
     }
 
+    /**
+     * Ajoutt une contrainte sur le mouvement d'un joueur
+     * @param joueur le joueur qui doit aller en prison
+     */
     @Override
     public void effet(Joueur joueur) {
 
