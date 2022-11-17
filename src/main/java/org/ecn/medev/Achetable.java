@@ -22,7 +22,7 @@ public abstract class Achetable extends Case {
 
     /**
      * Constructeur pour une case achetable
-     * @param nom le nom de la case
+     * @param nom nom de la case
      * @param prix le prix de la case
      * @param loyer le loyer sur la case
      * @param proprietaire le proprietaire de la case
@@ -65,4 +65,15 @@ public abstract class Achetable extends Case {
     public int calculLoyer(Joueur j) {
         return 0;
     }
+
+    @Override
+    public String toString() {
+        String achetableString = getNom() + "(cout : " + getPrix() + " )";
+        if (getProprietaire() == null) {
+            return achetableString + " - Sans proprietaire";
+        } else {
+            return achetableString + " - Proprietaire : " + getProprietaire() + ", loyer: " + getLoyer();
+        }
+    }
+
 }

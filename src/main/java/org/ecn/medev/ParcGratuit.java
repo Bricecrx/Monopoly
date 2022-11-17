@@ -11,7 +11,7 @@ package org.ecn.medev;
 public class ParcGratuit extends CaseSpeciale {
     
     /**
-     * Constructeurs de parc gratuit.
+     * Constructeur de parc gratuit.
      */
     public ParcGratuit() {
         super("Parc gratuit");

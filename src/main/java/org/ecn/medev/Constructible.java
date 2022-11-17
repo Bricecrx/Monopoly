@@ -25,6 +25,7 @@ public class Constructible extends Achetable {
         this.nbMaisons = nbMaisons;
         this.nbHotels = nbHotels;
     }
+    
 
     public int getNbMaisons() {
         return nbMaisons;
@@ -43,7 +44,7 @@ public class Constructible extends Achetable {
     }
     
     /**
-     * Construit des nouvelles maisons et de nouveaux hotels
+     * Construit de nouvelles maisons et de nouveaux hotels
      * @param nbNouvellesMaisons le nombre de nouvelles maisons
      * @param nbNouveauxHotels le nombre de nouveaux hotels
      */

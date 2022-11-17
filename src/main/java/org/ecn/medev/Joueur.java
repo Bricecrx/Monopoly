@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package org.ecn.medev;
-
+import java.util.Random;
 /**
  * Classe Joueur
  * @author erwan
@@ -22,14 +22,14 @@ public class Joueur {
      * @param fortune Fortune du Joueur.
      * @param position Position du Joueur.
     */
-    Joueur(String nom, int fortune, int position) {
+    public Joueur(String nom, int fortune, int position) {
         this.nom = nom;
         this.fortune = fortune;
         this.position = position;
     }
     
     /** Constructeur par defaut de Joueur. */
-    Joueur() {
+    public Joueur() {
         this.nom = "Jacques";
         this.fortune = 100000;
         this.position = 0;       
@@ -47,7 +47,7 @@ public class Joueur {
         else {
             j.setFortune(j.getFortune() + this.fortune);
             this.fortune = 0;
-            throw NoMoreMoney;
+            throw new NoMoreMoney();
         }
     }
     
@@ -60,7 +60,7 @@ public class Joueur {
         }
         else {
             this.fortune = 0;
-            throw NoMoreMoney;
+            throw new NoMoreMoney();
         }
     }
 
@@ -87,6 +87,25 @@ public class Joueur {
     public void setPosition(int position) {
         this.position = position;
     }
-    
-    
+
+    /**
+     * méthode qui retourne une valeur aléatoire représentant la valeur d'un dé lancé
+     * @return deval un entier qui represente la valeur du dé lancé
+     */
+    public static int lanceLeDe() {
+        int deval = (int) Math.floor(Math.random()*6+1);
+        return deval;
+    }
+    /**
+     * Le joueur avance d'un nb de cases
+     * @param nbCase
+     */
+    public void avancer(int nbCase){
+        for(int i=1; i<nbCase+1; i++){
+            this.position += nbCase;
+            if(this.position>39){
+                this.position -= 40;
+            }
+        }
+    }
 }
