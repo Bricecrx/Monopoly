@@ -17,7 +17,7 @@ public class CaseSpeciale extends Case {
     }
    
    public CaseSpeciale(String nom){
-      this.nom = nom;
+      super(nom);
    }
     
     /**
