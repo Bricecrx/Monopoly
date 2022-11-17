@@ -217,9 +217,12 @@ public class Plateau {
             
             if (this.cases.get(i) instanceof Gare){
                 Gare g = (Gare)this.cases.get(i);
-                if (g.proprietaire.equals(j)){
-                    n = n + 1;
+                if(g.proprietaire!=null){
+                    if (g.proprietaire.equals(j)){
+                        n = n + 1;
+                    }
                 }
+
             }
         }
         
