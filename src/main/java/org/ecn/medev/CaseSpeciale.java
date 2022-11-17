@@ -3,7 +3,7 @@ package org.ecn.medev;
 /**
  * Classe des cases spéciales
  */
-public abstract class CaseSpeciale extends Case {
+public class CaseSpeciale extends Case {
 
 
     /**
