@@ -7,9 +7,21 @@ package org.ecn.medev;
 public abstract class CaseSpeciale extends Case {
 
     /**
-     * Constructeurs de case spéciale.
+     *
+     * @param nomCase
      */
-    public CaseSpeciale(String nom) {
-        super(nom);
+    public CaseSpeciale(String nomCase){
+        setNom(nomCase);
+    }
+
+
+    public abstract void effet(Joueur joueur);
+
+    /**
+     * @return
+     */
+    @Override
+    public String toString(){
+        return getNom();
     }
 }
