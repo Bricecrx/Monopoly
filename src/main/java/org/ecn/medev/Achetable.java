@@ -92,7 +92,7 @@ public abstract class Achetable extends Case {
         b = 100;
        
         //  est-ce une gare ?
-        if(this instanceof Contructible)
+        if(this instanceof Constructible)
         {
             loyer = a * this.loyer *  this.getNbHotels() + b * this.loyer * this.getNbMaisons();
         }
