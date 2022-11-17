@@ -195,8 +195,9 @@ public class Plateau {
     }
     
     /**
-     *
      * @author Meryam
+     * Renvoie le nombre de gares.
+     * @return Le nombre de gares.
      */
     public int nbGares(Joueur j){
         
