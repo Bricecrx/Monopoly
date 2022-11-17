@@ -5,9 +5,6 @@
 
 package org.ecn.medev;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.LinkedList;
 import java.util.ArrayList;
 import java.util.List;
@@ -70,7 +67,7 @@ public class Plateau {
                     break;
                 case 1: case 3: case 6: case 8: case 9: case 11: case 13: case 14: case 16: case 18: case 19:
                 case 21: case 23: case 24: case 26: case 27: case 29: case 31: case 32: case 34: case 37: case 39:
-                    cases.add( new Constructible("Rue n°" + numRue), (1000 * numRue)/2);
+                    cases.add( new Constructible("Rue n°" + numRue, (1000 * numRue)/2));
                     break;
                 case 2: case 17: case 33:
                     cases.add( new CaseSpeciale("Caisse Communautaire"));
