@@ -47,7 +47,7 @@ public class Joueur {
         else {
             j.setFortune(j.getFortune() + this.fortune);
             this.fortune = 0;
-            throw NoMoreMoney;
+            throw new NoMoreMoney();
         }
     }
     
@@ -60,7 +60,7 @@ public class Joueur {
         }
         else {
             this.fortune = 0;
-            throw NoMoreMoney;
+            throw new NoMoreMoney();
         }
     }
 
