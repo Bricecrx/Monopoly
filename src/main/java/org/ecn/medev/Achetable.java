@@ -3,22 +3,63 @@ package org.ecn.medev;
 /**
  * Classe achetable
  */
-public abstract class Achetable extends Case{
+public abstract class Achetable extends Case {
 
-    public int prix;
-    public int loyer;
-    public Joueur proprietaire;
+    /**
+     * Prix de la case.
+     */
+    private int prix;
+    
+    /**
+     * Loyer sur la case.
+     */
+    private int loyer;
+    
+    /**
+     * Propriétaire de la case.
+     */
+    private Joueur proprietaire;
 
-    public Achetable(int cost,Joueur J) {
-        this.prix = cost;
-        this.proprietaire = new Joueur(J) ;
+    /**
+     * Constructeur pour une case achetable
+     * @param prix le prix de la case
+     * @param loyer le loyer sur la case
+     * @param propietaire le proprietaire de la case
+     */
+    public Achetable(int prix, int loyer, Joueur proprietaire) {
+        this.prix = prix;
+        this.loyer = loyer;
+        this.proprietaire = proprietaire;
     }
 
-    public void acheter(){
-
+    public int getPrix() {
+        return prix;
     }
 
-    public int CalculLoyer() {
+    public int getLoyer() {
+        return loyer;
+    }
 
+    public Joueur getProprietaire() {
+        return proprietaire;
+    }
+
+    public void setPrix(int prix) {
+        this.prix = prix;
+    }
+
+    public void setLoyer(int loyer) {
+        this.loyer = loyer;
+    }
+
+    public void setProprietaire(Joueur proprietaire) {
+        this.proprietaire = proprietaire;
+    }
+    
+   
+    public void acheter() {
+    }
+
+    public int calculLoyer(Joueur j) {
     }
 }
