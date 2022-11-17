@@ -36,7 +36,6 @@ public class Joueur {
             finDePartie();
         }
     }
-    
     public void finDePartie() {
         
     }
