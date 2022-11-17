@@ -13,6 +13,12 @@ public class Gare extends Achetable {
     }
 
 
+    public Gare(String name){
+        super(name,500);
+
+    }
+
+
     @Override
     public String toString() {
         return "Gare de" + this.getNom() +" (coût :"+this.getPrix()+ ") - " + proprietaire.getNom();
