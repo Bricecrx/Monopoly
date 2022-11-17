@@ -1,35 +1,39 @@
 package org.ecn.medev;
 
 /**
- *
- * @author aulou
+ * Classe des cases spéciales
  */
-public class CaseSpeciale extends Case {
-   
-    
-    // Constructeur par défaut : case départ
+public abstract class CaseSpeciale extends Case {
+
 
     /**
-     *
+     * Constructeurs par défaut.
      */
      public CaseSpeciale(){
         super("Depart");
     }
    
-   public CaseSpeciale(String nom){
-      super(nom);
-   }
+     /**
+      * Constructeurs pour une case spéciale.
+      * @param nom le nom de la case spéciale
+      */
+    public CaseSpeciale(String nom){
+       super(nom);
+    }
     
     /**
-     *
-     * @return
+     * Renvoie le nom de la case.
+     * @return le nom
      */
     @Override
     public String getNom(){
         return(nom);
     }
 
-    public void effet(Joueur joueur) {
-        
+    /**
+     * Gère l'effet de la case sur le joueur.
+     * @param joueur le joueur affecté
+     */
+    public void effet(Joueur joueur) {  
     }
 }
