@@ -39,7 +39,7 @@ public class Constructible extends Achetable {
      * @param nom le nom de la case
      */
     public Constructible(String nom){
-        super(nom, -1);
+        super(nom, 10000);
     }
 
      /**

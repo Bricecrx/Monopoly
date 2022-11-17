@@ -6,9 +6,7 @@ public class Main {
         Plateau gameBoard=new Plateau();
         gameBoard.init();
 
-        int nombreDeTours=5;
-        int i=0;
-        while(i<nombreDeTours){
+        while(gameBoard.partieEnCours){
             //gameBoard.tourDeJeu();
             gameBoard.affiche();
             gameBoard.tourDeJeu();

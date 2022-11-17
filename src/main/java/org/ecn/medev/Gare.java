@@ -10,7 +10,7 @@ public class Gare extends Achetable {
 
 
     public Gare(String name){
-        super(name,500);
+        super(name,5000);
 
     }
 
