@@ -13,12 +13,12 @@ public class Constructible extends Achetable {
     /**
      * Nombre de maisons construites sur la case.
      */
-    private int nbMaisons;
+    protected int nbMaisons;
     
     /**
      * Nombre d'hotels construits sur la case.
      */
-    private int nbHotels;
+    protected int nbHotels;
 
     public Constructible(String nom, int prix, int loyer, Joueur proprietaire, int nbMaisons, int nbHotels) {
         super(nom, prix, loyer, proprietaire);

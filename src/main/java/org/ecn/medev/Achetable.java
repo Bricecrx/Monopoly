@@ -8,17 +8,17 @@ public abstract class Achetable extends Case {
     /**
      * Prix de la case.
      */
-    private int prix;
+    protected int prix;
     
     /**
      * Loyer sur la case.
      */
-    private int loyer;
+    protected int loyer;
     
     /**
      * Propriétaire de la case.
      */
-    private Joueur proprietaire;
+    protected Joueur proprietaire;
 
     /**
      * Constructeur pour une case achetable
