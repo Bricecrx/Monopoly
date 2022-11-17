@@ -5,8 +5,7 @@
 package org.ecn.medev;
 
 /**
- * Classe Parc Gratuit
- * @author Pierre Baudet
+ * Classe de la case Parc Gratuit.
  */
 public class ParcGratuit extends Case {
     
@@ -17,8 +16,10 @@ public class ParcGratuit extends Case {
         super("Parc gratuit");
     }
 
-
+    /**
+     * Réalise l'effet du parc gratuit sur le joueur.
+     * @param joueur le joueur affecté
+     */
     public void effet(Joueur joueur) {
-
     }
 }
