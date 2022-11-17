@@ -24,13 +24,12 @@ public abstract class Achetable extends Case {
      * Constructeur pour une case achetable
      * @param nom nom de la case
      * @param prix le prix de la case
-     * @param loyer le loyer sur la case
      * @param proprietaire le proprietaire de la case
      */
-    public Achetable(String nom, int prix, int loyer, Joueur proprietaire) {
+    public Achetable(String nom, int prix, Joueur proprietaire) {
         super(nom);
         this.prix = prix;
-        this.loyer = loyer;
+        this.loyer = 0;
         this.proprietaire = proprietaire;
     }
 
