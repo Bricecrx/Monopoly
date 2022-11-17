@@ -51,5 +51,6 @@ public class Constructible extends Achetable {
     private void construire(int nbNouvellesMaisons, int nbNouveauxHotels) {
         this.nbMaisons += nbNouvellesMaisons;
         this.nbHotels += nbNouveauxHotels;
+        this.CalculLoyer();
     }
 }
