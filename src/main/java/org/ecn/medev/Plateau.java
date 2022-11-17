@@ -34,7 +34,7 @@ public class Plateau {
     /** Initialisation des joueurs et des cases du plateau. */
     public void init() {
         // Initialisation des joueurs
-        for (int i = 0; i < NB_JOUEURS; i++) {
+        for (int i = 0; i < NB_JOUEURS; i++, 100000, 0) {
             Joueur j = new Joueur("Joueur " + i);
             joueurs.add(j);
         }
