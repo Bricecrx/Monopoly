@@ -4,24 +4,28 @@ package org.ecn.medev;
  *
  * @author aulou
  */
-public abstract class CaseSpeciale extends Case {
+public class CaseSpeciale extends Case {
+   
+    
+    // Constructeur par défaut : case départ
 
     /**
      *
-     * @param nomCase
      */
-    public CaseSpeciale(String nomCase){
-        setNom(nomCase);
+     public CaseSpeciale(){
+        super("Depart");
     }
-
-
-    public abstract void effet(Joueur joueur);
-
+   
+   public CaseSpeciale(String nom){
+      super(nom);
+   }
+    
     /**
+     *
      * @return
      */
     @Override
-    public String toString(){
-        return getNom();
+    public String getNom(){
+        return(nom);
     }
 }
