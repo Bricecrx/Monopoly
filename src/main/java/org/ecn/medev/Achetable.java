@@ -69,9 +69,9 @@ public abstract class Achetable extends Case {
      *
      * @param j
      */
-    public void Acheter(Joueur j) {
+    public void acheter(Joueur j) throw NoMoreMoney{
         this.proprietaire = new Joueur(j);
-        j.setFortune(j.getFortune() - this.prix);
+        j.payer(this.prix);
         
         // On maj le loyer 
         this.calculLoyer();
@@ -102,7 +102,7 @@ public abstract class Achetable extends Case {
         // ou un constructible ?
         else if(this instanceof Gare)
         {
-            loyer = 2500 * Plateau.instance.nbGares(this.getProprietaire());
+            loyer = 2500 * this.getProprietaire().nbGare();
         }
         
         this.setLoyer(loyer);
