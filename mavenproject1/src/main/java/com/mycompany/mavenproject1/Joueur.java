@@ -39,7 +39,7 @@ public class Joueur {
      * @param cout cout du paiement.
      * @param j Joueur a payer.
     */    
-    public void payer(int cout, Joueur j) {
+    public void payer(int cout, Joueur j) throws NoMoreMoney {
         if(this.fortune > cout) {
             this.fortune -= cout;
             j.setFortune(j.getFortune() + cout);
@@ -47,7 +47,20 @@ public class Joueur {
         else {
             j.setFortune(j.getFortune() + this.fortune);
             this.fortune = 0;
-            //finDePartie();
+            throw NoMoreMoney;
+        }
+    }
+    
+    /** Paiement a la banque.
+     * @param cout cout du paiement.
+    */    
+    public void payer(int cout) throws NoMoreMoney {
+        if(this.fortune > cout) {
+            this.fortune -= cout;
+        }
+        else {
+            this.fortune = 0;
+            throw NoMoreMoney;
         }
     }
 
