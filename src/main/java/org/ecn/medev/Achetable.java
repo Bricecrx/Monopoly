@@ -32,12 +32,7 @@ public abstract class Achetable extends Case {
         this.loyer = 0;
         this.proprietaire = proprietaire;
     }
-    public Achetable(String nom, int prix ){
-        super(nom);
-        this.prix = prix;
-        this.loyer = 0;
 
-    }
     public int getPrix() {
         return prix;
     }
@@ -66,9 +61,38 @@ public abstract class Achetable extends Case {
     public void acheter() {
     }
 
-    public int calculLoyer(Joueur j) {
-        return 0;
+    /**
+    * <h1>CalculLoyer</h1>
+    * La méthode MAJ le prix du loyer lors de l'achat ou de la construction
+    * <p>
+    *
+    * @author  Thomas Canal
+    * @version 1.0
+    * @since   2022-11-17
+    */
+    public void CalculLoyer()
+    {
+        int loyer = 0;
+        int a,b;
+        
+        a = 500;
+        b = 100;
+       
+        //  est-ce une gare ?
+        if(this instanceof Contructible)
+        {
+            loyer = a * this.loyer *  this.getNbHotels() + b * this.loyer * this.getNbMaisons();
+        }
+        // ou un constructible ?
+        else if(this instanceof Gare)
+        {
+            loyer = 2500 * this.getProprietaire().nbGare();
+        }
+        
+        this.setLoyer(loyer);
     }
+    
+    
 
     @Override
     public String toString() {
