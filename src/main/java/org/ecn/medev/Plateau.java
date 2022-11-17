@@ -26,6 +26,9 @@ public class Plateau {
     private ArrayList<Case> cases;
     /** Les joueurs. */
     private LinkedList<Joueur> joueurs;
+
+    //Indique si la partie est en cours
+    public boolean partieEnCours = true;
     
     /** Constructeur du plateau. */
     Plateau() {
@@ -178,16 +181,17 @@ public class Plateau {
                 }
             }
         }
+
+        finDePartie();
     }
     
     /** 
      * Indicateur de fin de partie.
-     * @return Renvoie vrai si la partie est finie.
+     * Set la variable partieEnCours sur False si la partie est terminée
     */
-    public boolean finDePartie() {
+    public void finDePartie() {
         int nbJoueur = joueurs.size();
-        boolean partieFinie = nbJoueur <= 1;
-        return partieFinie;
+        partieEnCours = !(nbJoueur <= 1);
     }    
     
     /** Affichage des cases du plateau. */
