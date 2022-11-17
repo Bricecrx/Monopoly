@@ -28,4 +28,8 @@ public class CaseSpeciale extends Case {
     public String getNom(){
         return(nom);
     }
+
+    public void effet(Joueur joueur) {
+        
+    }
 }
