@@ -24,6 +24,5 @@ public class Gare extends Achetable {
             return "Gare de" + this.getNom() + " (coût :" + this.getPrix() + ") - ";
 
         }
-        return "Gare de" + this.getNom() +" (coût :"+this.getPrix()+ ") - ";
     }
 }
