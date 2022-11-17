@@ -20,7 +20,7 @@ public class Constructible extends Achetable {
      */
     protected int nbHotels;
 
-    public Constructible(String nom, int prix, int loyer, Joueur proprietaire, int nbMaisons, int nbHotels) {
+    public Constructible(String nom, int prix, Joueur proprietaire, int nbMaisons, int nbHotels) {
         super(nom, prix, proprietaire);
         this.nbMaisons = nbMaisons;
         this.nbHotels = nbHotels;
