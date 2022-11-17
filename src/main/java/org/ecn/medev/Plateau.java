@@ -27,15 +27,15 @@ public class Plateau {
     private LinkedList<Joueur> joueurs;
     
     /** Constructeur du plateau. */
-    Plateau() {
+    public Plateau() {
         instance = this;
     }
     
     /** Initialisation des joueurs et des cases du plateau. */
     public void init() {
         // Initialisation des joueurs
-        for (int i = 0; i < NB_JOUEURS; i++, 100000, 0) {
-            Joueur j = new Joueur("Joueur " + i);
+        for (int i = 0; i < NB_JOUEURS; i++) {
+            Joueur j = new Joueur("Joueur " + i,100000, 0);
             joueurs.add(j);
         }
         
