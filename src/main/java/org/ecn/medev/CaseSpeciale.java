@@ -13,11 +13,11 @@ public class CaseSpeciale extends Case {
      *
      */
      public CaseSpeciale(){
-         super("Depart");
+        this.nom = "Depart";
     }
    
    public CaseSpeciale(String nom){
-      super(nom);
+      this.nom = nom;
    }
     
     /**

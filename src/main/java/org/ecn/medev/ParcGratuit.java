@@ -13,7 +13,7 @@ public class ParcGratuit extends CaseSpeciale {
     /**
      * Constructeur de parc gratuit.
      */
-    public ParcGratuit(String nom) {
-        super(nom);
+    public ParcGratuit() {
+        super("Parc gratuit");
     }
 }
