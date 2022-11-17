@@ -64,9 +64,14 @@ public abstract class Achetable extends Case {
     public void setProprietaire(Joueur proprietaire) {
         this.proprietaire = proprietaire;
     }
-    
-   
-    public void acheter() {
+
+    /**
+     *
+     * @param j
+     */
+    public void acheter(Joueur j) {
+        this.proprietaire = new Joueur(j);
+        j.setFortune(j.getFortune - this.prix);
     }
 
     /**
