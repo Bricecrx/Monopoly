@@ -24,7 +24,7 @@ public abstract class Achetable extends Case {
      * Constructeur pour une case achetable
      * @param prix le prix de la case
      * @param loyer le loyer sur la case
-     * @param propietaire le proprietaire de la case
+     * @param proprietaire le proprietaire de la case
      */
     public Achetable(int prix, int loyer, Joueur proprietaire) {
         this.prix = prix;
