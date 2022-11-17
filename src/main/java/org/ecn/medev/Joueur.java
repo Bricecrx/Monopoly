@@ -115,4 +115,17 @@ public class Joueur {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return "Joueur{" +
+                "nom='" + nom + '\'' +
+                " est en " + position +
+                '}';
+    }
+
+    public void tourDeJeu(){
+        int de = lanceLeDe();
+
+    }
 }
