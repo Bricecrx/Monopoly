@@ -124,8 +124,4 @@ public class Joueur {
                 '}';
     }
 
-    public void tourDeJeu(){
-        int de = lanceLeDe();
-
-    }
 }
