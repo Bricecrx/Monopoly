@@ -62,6 +62,7 @@ public abstract class Achetable extends Case {
     }
 
     public int calculLoyer(Joueur j) {
+        return 0;
     }
 
     @Override
