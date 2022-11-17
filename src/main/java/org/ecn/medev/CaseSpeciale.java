@@ -5,17 +5,7 @@ package org.ecn.medev;
  * @author aulou
  */
 public class CaseSpeciale extends Case {
-    // Nom de la case
-    private String nom;
-    
-    
-    /**
-     *
-     * @param nomCase
-     */
-    public CaseSpeciale(String nomCase){
-        nom = nomCase;
-    }
+   
     
     // Constructeur par défaut : case départ
 
@@ -31,15 +21,7 @@ public class CaseSpeciale extends Case {
      * @return
      */
     @Override
-    public String GetNom(){
+    public String getNom(){
         return(nom);
-    }
-
-    /**
-     *
-     */
-    @Override
-    public void toString(){
-        System.out.println(nom);
     }
 }
