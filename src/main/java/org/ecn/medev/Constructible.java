@@ -26,6 +26,10 @@ public class Constructible extends Achetable {
         this.nbHotels = nbHotels;
     }
     
+    public Constructible(String nom){
+        super(nom, -1);
+    }
+    
 
     public int getNbMaisons() {
         return nbMaisons;
